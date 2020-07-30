@@ -7,11 +7,17 @@
 
 <script>
 import HelloWorld from './components/HelloWorld'
+import axios from 'axios'
 
 export default {
   name: 'App',
   components: {
     HelloWorld
+  },
+  created(){
+    axios.get('/api/news').then((res)=>{
+      console.log(res);
+    })
   }
 }
 </script>
